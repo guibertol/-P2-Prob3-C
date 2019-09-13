@@ -1,0 +1,1 @@
+Metodo Singleton implementado nas classes Stategy, e Entrega
