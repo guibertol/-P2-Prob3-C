@@ -33,19 +33,24 @@ public class Teste {
         pedido.setListaDeItens(item7);
         pedido.setListaDeItens(item8);
         
-        pedido.setTipoDeEntrega(Entrega.PAC);
+        Pac pac = new Pac();
+        Sedex sedex = new Sedex();
+        Retiradalocal retiradalocal = new Retiradalocal();
+        Motoboy motoboy = new Motoboy();
+        
+        pedido.setTipoDeEntrega(pac);
 
         mensagens(pedido);
 
-        pedido.setTipoDeEntrega(Entrega.SEDEX);
+        pedido.setTipoDeEntrega(sedex);
         
         mensagens(pedido);
         
-        pedido.setTipoDeEntrega(Entrega.RETIRADALOCAL);
+        pedido.setTipoDeEntrega(retiradalocal);
         
         mensagens(pedido);
         
-        pedido.setTipoDeEntrega(Entrega.MOTOBOY);
+        pedido.setTipoDeEntrega(motoboy);
         
         mensagens(pedido);
         

@@ -1,6 +1,6 @@
 package p2.prop3_2.papelaria;
 
-public enum Entrega implements Strategy{
+public enum Entrega implements CalculoEntrega{
     
     PAC{
         

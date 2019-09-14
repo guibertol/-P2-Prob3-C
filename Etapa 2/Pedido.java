@@ -10,7 +10,7 @@ public class Pedido {
     private Date data;
     private String endereco;
     private ArrayList<ItemPedido> listaDeItens = new ArrayList<ItemPedido>();
-    private Entrega tipoDeEntrega;
+    private CalculoEntrega tipoEntrega;
 
     public ArrayList<ItemPedido> getListaDeItens() {
         return listaDeItens;
@@ -20,12 +20,12 @@ public class Pedido {
         getListaDeItens().add(listaDeItens);
     }
 
-    public Entrega getTipoDeEntrega() {
-        return tipoDeEntrega;
+    public CalculoEntrega getTipoDeEntrega() {
+        return tipoEntrega;
     }
 
-    public void setTipoDeEntrega(Entrega tipoDeEntrega) {
-        this.tipoDeEntrega = tipoDeEntrega;
+    public void setTipoDeEntrega(CalculoEntrega tipoDeEntrega) {
+        this.tipoEntrega = tipoDeEntrega;
     }
 
     public Pedido() {
@@ -80,12 +80,12 @@ public class Pedido {
 
     public double getValorEntrega() throws TipoEntregaInvalido {
         
-        return tipoDeEntrega.calculafrete(pesagemFinal(), listaDeItens.size());
+        return tipoEntrega.calculafrete(pesagemFinal(), listaDeItens.size());
         
     }
 
-    public float pesagemFinal() {
-        float pesoTotal = 0;
+    public double pesagemFinal() {
+        double pesoTotal = 0;
         for (ItemPedido item : listaDeItens) {
             pesoTotal += item.getProduto().getPeso();
         }
